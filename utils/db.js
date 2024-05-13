@@ -13,6 +13,20 @@ class DBClient {
   isAlive() {
     return this.mongoClient.isConnected();
   }
+
+  async nbusers() {
+    /* Returns count of the users in collection users */
+    const db = this.mongoClient.db();
+    const collection = db.collection('users');
+    return collection.countDocuments();
+  }
+
+  async nbFiles() {
+    /* Returns count of files in collection files */
+    const db = this.mongoClient.db();
+    const collection = db.colection('files');
+    return collection.countDocuments();
+  }
 }
 
 const dbClient = new DBClient();

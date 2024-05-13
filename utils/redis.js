@@ -10,7 +10,7 @@ class RedisClient {
   isAlive() {
     return this.redisClient.connected;
   }
-   
+
   async get(key) {
     const getPromise = promisify(this.redisClient.get).bind(this.redisClient);
     return getPromise(key);
@@ -22,8 +22,8 @@ class RedisClient {
   }
 
   async del(key) {
-   const delPromise = promisify(this.redisClient.del).bind(this.redisClient);
-   return delPromise(key);
+    const delPromise = promisify(this.redisClient.del).bind(this.redisClient);
+    return delPromise(key);
   }
 }
 
