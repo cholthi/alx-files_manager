@@ -14,7 +14,7 @@ class DBClient {
     return this.mongoClient.isConnected();
   }
 
-  async nbusers() {
+  async nbUsers() {
     /* Returns count of the users in collection users */
     const db = this.mongoClient.db();
     const collection = db.collection('users');
@@ -24,7 +24,7 @@ class DBClient {
   async nbFiles() {
     /* Returns count of files in collection files */
     const db = this.mongoClient.db();
-    const collection = db.colection('files');
+    const collection = db.collection('files');
     return collection.countDocuments();
   }
 }
