@@ -4,7 +4,7 @@ import dbClient from '../utils/db';
 class AppController {
   static async getStatus(request, response) {
     const statusRedis = redisClient.isAlive();
-    const statusMongo = dbClient.iaAlive();
+    const statusMongo = dbClient.isAlive();
     response.set('Content-Type', 'application/json');
     response.status(200).json({ redis: statusRedis, db: statusMongo }).end();
   }
